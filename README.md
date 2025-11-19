@@ -2,7 +2,7 @@
 
 Shortest Path Algorithm Comparison: Bellman-Ford vs. A* Search
 
-1. Overview
+## 1. Overview
 
 This project implements and compares two fundamental shortest path algorithms—Bellman-Ford (BF) and the A* Search algorithm—across various graph structures to evaluate their performance in terms of time efficiency and optimality.
 
@@ -16,7 +16,7 @@ A*'s superior time efficiency, especially on large, dense graphs.
 
 Both algorithms' ability to handle non-negative weights, with BF uniquely capable of handling negative weights (as long as no negative cycles exist on the shortest path).
 
-2. Methodology and Code Explanation
+## 2. Methodology and Code Explanation
 
 Graph Generation (create_problem)
 
@@ -63,22 +63,22 @@ Both Bellman-Ford and A* are run on the same pair.
 The cost, execution time, and path of both algorithms are recorded.
 
 
-3. Analysis of Results
+## 3. Analysis of Results
 
 The following observations are based on the final summary table generated from the execution:
 
-3.1. Optimality
+### 3.1. Optimality
 
 Conclusion: In all scenarios where a path was successfully found (i.e., BF returned a finite cost), the A* Cost exactly matched the Bellman-Ford Cost.
 
 Interpretation: This confirms the theoretical guarantee that when an admissible heuristic (like the Euclidean distance used here) is employed, the A* search algorithm is optimal, meaning it always finds the lowest-cost path.
 
 
-3.2. Key Comparison:
+### 3.2. Key Comparison:
 
 For most of the Graphs:  Times were nearly identical
 
-3.3. Negative Weights and Path Sampling Failures
+### 3.3. Negative Weights and Path Sampling Failures
 
 Success with Negative Weights: A* successfully found the optimal path in all scenarios where negative weights were present but no negative cycle existed on the shortest path. This is expected because the Euclidean distance heuristic remains admissible and the underlying graph structure is still valid for A* to terminate optimally.
 
@@ -86,10 +86,10 @@ Path Sampling Failure: Multiple scenarios, predominantly those combining low den
 
 Interpretation: This is a byproduct of the test setup. Low density means fewer edges, making a connected path between two random nodes less likely. The inclusion of negative values does not cause the failure, but the sparse graph structure made it hard for the random sampler to find a guaranteed connected path pair within the allowed attempts.
 
-4. Generated Data File
+## 4. Generated Data File
 
 The complete, granular data for all test scenarios is available in:
 shortest_path_comparison_summary.csv
 
-Disclaimer:
+### Disclaimer:
 I used Gemini to help me in code structure, documentation formatting and to optimize some parts of my implementation. Some ideas were mine and some were Gemini suggested improvements.
