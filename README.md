@@ -32,9 +32,9 @@ Negative Values: When enabled, the base random weights are scaled into the range
 
 Heuristic: The node coordinates are crucial for calculating the admissible Euclidean distance heuristic h(n) used by A*.
 
-Algorithms
+### Algorithms
 
-Bellman-Ford (BF) - Baseline:
+### Bellman-Ford (BF) - Baseline:
 
 Uses the networkx implementation.
 
@@ -42,7 +42,7 @@ Guaranteed to find the optimal shortest path even with negative edge weights.
 
 Detects negative cycles (which result in an unbounded cost).
 
-A* Search - Optimized:
+### A* Search - Optimized:
 
 A custom implementation using a priority queue (min-heap).
 
@@ -50,7 +50,7 @@ Uses the cost-to-reach function g(n) plus the Euclidean distance heuristic h(n) 
 
 Admissibility: Since the Euclidean distance is a straight-line distance, it is guaranteed to be less than or equal to the true path cost, making it an admissible heuristic. This ensures A* finds the optimal path.
 
-Testing Strategy
+### Testing Strategy
 
 The code iterates through all combinations of the defined parameters. For each configuration:
 
